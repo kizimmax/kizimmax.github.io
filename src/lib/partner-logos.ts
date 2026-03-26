@@ -1,7 +1,6 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
 
-import { unstable_noStore as noStore } from "next/cache";
 
 export type PartnerLogo = {
   alt: string;
@@ -79,7 +78,6 @@ export async function getHeroLogoFilePath(filename: string) {
 }
 
 export async function getPartnerLogos(): Promise<PartnerLogo[]> {
-  noStore();
 
   const directory = await resolveHeroLogosDirectory();
   const entries = await fs.readdir(directory, { withFileTypes: true });
