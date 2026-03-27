@@ -1,7 +1,6 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
 
-
 export type PartnerLogo = {
   alt: string;
   filename: string;
